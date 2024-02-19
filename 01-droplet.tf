@@ -17,7 +17,7 @@ resource "digitalocean_droplet" "monitoring" {
 
 resource "null_resource" "addkey" {
   provisioner "local-exec" {
-    command = "echo \"${digitalocean_droplet.monitoring.ipv4_address} ${digitalocean_ssh_key.vagrantvm.public_key}\" >> ~/.ssh/known_hosts"
+    command = "ssh-keyscan -H localhost ${digitalocean_droplet.monitoring.ipv4_address} >> ~/.ssh/known_hosts"
   }
 
   depends_on = [ digitalocean_droplet.monitoring ]
