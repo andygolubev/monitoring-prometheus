@@ -19,6 +19,9 @@ resource "null_resource" "run_playbook" {
   provisioner "local-exec" {
     command = "ansible-playbook -i ./inventory.ini ./playbook-monitoring-setup.yml"
   }
+  triggers = {
+    timestamp = timestamp()
+  }
 
   depends_on = [ null_resource.make_inventory ]
 }
