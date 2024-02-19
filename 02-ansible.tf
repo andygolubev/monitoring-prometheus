@@ -17,7 +17,7 @@ resource "null_resource" "make_inventory" {
 
 resource "null_resource" "run_playbook" {
   provisioner "local-exec" {
-    command = "ansible-playbook -i ./inventory.ini --ssh-extra-args='-o StrictHostKeyChecking=no' ./playbook-monitoring-setup.yml"
+    command = "ansible-playbook -i ./inventory.ini ./playbook-monitoring-setup.yml --ssh-extra-args='-o StrictHostKeyChecking=no'"
   }
   triggers = {
     timestamp = timestamp()
