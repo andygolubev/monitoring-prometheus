@@ -4,10 +4,10 @@
   remote_user: root
 
   tasks:
-    - name: Add Docker's official GPG key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
+    # - name: Add Docker's official GPG key
+    #   apt_key:
+    #     url: https://download.docker.com/linux/ubuntu/gpg
+    #     state: present
 
     # - name: Install prerequisites
     #   apt:
@@ -49,11 +49,11 @@
     #   loop:
     #     - docker-ce
     #     - docker-compose
-    # - name: Copy the folder with configurations
-    #   copy:
-    #     src: ./monitoring_vm_files/
-    #     dest: ./monitoring/
-    #     # Optional: you can specify the owner and permissions of the copied file
-    #     # owner: user
-    #     # group: group
-    #     # mode: "0644"
+    - name: Copy the folder with configurations
+      copy:
+        src: ./monitoring_vm_files/
+        dest: ./monitoring/
+        # Optional: you can specify the owner and permissions of the copied file
+        # owner: user
+        # group: group
+        # mode: "0644"
