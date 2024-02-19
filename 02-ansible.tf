@@ -17,7 +17,7 @@ resource "null_resource" "make_inventory" {
 
 resource "null_resource" "run_playbook" {
   provisioner "local-exec" {
-    command = "ansible-playbook -i ./inventory.ini ./playbook-monitoring-setup.yml"
+    command = "sleep 10 && ansible-playbook -i ./inventory.ini ./playbook-monitoring-setup.yml"
   }
   triggers = {
     timestamp = timestamp()
