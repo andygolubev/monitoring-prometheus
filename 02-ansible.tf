@@ -12,12 +12,12 @@ resource "null_resource" "make_inventory" {
     command = "echo ${digitalocean_droplet.monitoring.ipv4_address} > ./inventory.ini"
   }
 
-  depends_on = [ null_resource.addkey ]
+  depends_on = [ digitalocean_droplet.monitoring ]
 }
 
 resource "null_resource" "run_playbook" {
   provisioner "local-exec" {
-    command = "sleep 10 && ansible-playbook -i ./inventory.ini ./playbook-monitoring-setup.yml"
+    command = "ansible-playbook -i ./inventory.ini --ssh-extra-args='-o StrictHostKeyChecking=no' ./playbook-monitoring-setup.yml"
   }
   triggers = {
     timestamp = timestamp()
@@ -25,3 +25,4 @@ resource "null_resource" "run_playbook" {
 
   depends_on = [ null_resource.make_inventory ]
 }
+
