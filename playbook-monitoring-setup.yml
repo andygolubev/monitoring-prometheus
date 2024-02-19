@@ -48,6 +48,11 @@
       loop:
         - docker-ce
         - docker-compose
+    - name: Ensure Docker service is started and enabled
+      service:
+        name: docker
+        state: started
+        enabled: yes
     - name: Copy the folder with configurations
       copy:
         src: ./monitoring_vm_files/
