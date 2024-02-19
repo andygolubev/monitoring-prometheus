@@ -15,10 +15,10 @@ resource "digitalocean_droplet" "monitoring" {
 
 }
 
-resource "null_resource" "addkey" {
-  provisioner "local-exec" {
-    command = "echo $(ssh-keyscan -H ${digitalocean_droplet.monitoring.ipv4_address}) >> ~/.ssh/known_hosts"
-  }
+# resource "null_resource" "addkey" {
+#   provisioner "local-exec" {
+#     command = "echo $(ssh-keyscan -H ${digitalocean_droplet.monitoring.ipv4_address}) >> ~/.ssh/known_hosts"
+#   }
 
-  depends_on = [ digitalocean_droplet.monitoring ]
-}
+#   depends_on = [ digitalocean_droplet.monitoring ]
+# }
