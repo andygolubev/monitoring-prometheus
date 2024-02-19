@@ -9,7 +9,7 @@
 
 resource "null_resource" "make_inventory" {
   provisioner "local-exec" {
-    command = "echo ${digitalocean_droplet.monitoring.ipv4_address}) > ./inventory.ini"
+    command = "echo ${digitalocean_droplet.monitoring.ipv4_address} > ./inventory.ini"
   }
 
   depends_on = [ null_resource.addkey ]
