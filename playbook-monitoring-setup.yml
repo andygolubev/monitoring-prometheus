@@ -62,7 +62,7 @@
   tasks:
     - name: Ensure group "monitoring" exists
       ansible.builtin.group:
-        name: somegroup
+        name: monitoring
         state: present
     - name: Add the user 'Monitoring'
       ansible.builtin.user:
