@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   prometheus:
@@ -7,7 +7,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - /root/monitoring/prometheus:/etc/prometheus
+      - /home/monitoring/config/prometheus:/etc/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
@@ -19,7 +19,7 @@ services:
     ports:
       - "9093:9093"
     volumes:
-      - /root/monitoring/alertmanager:/etc/alertmanager
+      - /home/monitoring/config/alertmanager:/etc/alertmanager
     networks:
       - monitoring
 
@@ -29,9 +29,10 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /root/monitoring/grafana:/var/lib/grafana
+      - grafana_storage:/var/lib/grafana
     networks:
       - monitoring
-
+volumes:
+  grafana_storage: {}
 networks:
   monitoring:

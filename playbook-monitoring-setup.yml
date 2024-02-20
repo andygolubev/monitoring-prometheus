@@ -16,6 +16,7 @@
       loop:
         - ca-certificates
         - curl
+        - tree
 
     - name: Create directory /etc/apt/keyrings
       file:
