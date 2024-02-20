@@ -53,10 +53,30 @@
         name: docker
         state: started
         enabled: yes
-    - name: Copy the folder with configurations
+
+
+- name: Add Monirotinig user
+  hosts: all
+  gather_facts: yes
+  remote_user: root
+  tasks:
+    - name: Add the user 'Monitoring'
+      ansible.builtin.user:
+        name: monitoring
+        shell: /bin/bash
+        groups: root
+        append: yes
+
+
+- name: Copy the folder with configurations
+  hosts: all
+  gather_facts: yes
+  remote_user: monitoring
+  tasks:  
+    - name: Copy the folder
       copy:
         src: ./monitoring_vm_files/
-        dest: ./monitoring/
-        owner: root
-        group: root
-        mode: "0777"
+        dest: /home/monitoring/config/
+        # owner: root
+        # group: root
+        # mode: "0777"
