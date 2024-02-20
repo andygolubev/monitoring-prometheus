@@ -68,7 +68,7 @@
       ansible.builtin.user:
         name: monitoring
         shell: /bin/bash
-        groups: monitoring,root
+        groups: monitoring,sudo,docker
         append: yes
 
     - name: Create a .ssh directory if it does not exist
