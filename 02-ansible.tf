@@ -7,22 +7,22 @@
 # }
 
 
-resource "null_resource" "make_inventory" {
-  provisioner "local-exec" {
-    command = "echo ${digitalocean_droplet.monitoring.ipv4_address} > ./inventory.ini"
-  }
+# resource "null_resource" "make_inventory" {
+#   provisioner "local-exec" {
+#     command = "echo ${digitalocean_droplet.monitoring.ipv4_address} > ./inventory.ini"
+#   }
 
-  depends_on = [ digitalocean_droplet.monitoring ]
-}
+#   depends_on = [ digitalocean_droplet.monitoring ]
+# }
 
-resource "null_resource" "run_playbook" {
-  provisioner "local-exec" {
-    command = "sleep 10 && ansible-playbook -i ./inventory.ini ./playbook-monitoring-setup.yml --ssh-extra-args='-o StrictHostKeyChecking=no'"
-  }
-  triggers = {
-    timestamp = timestamp()
-  }
+# resource "null_resource" "run_playbook" {
+#   provisioner "local-exec" {
+#     command = "sleep 10 && ansible-playbook -i ./inventory.ini ./playbook-monitoring-setup.yml --ssh-extra-args='-o StrictHostKeyChecking=no'"
+#   }
+#   triggers = {
+#     timestamp = timestamp()
+#   }
 
-  depends_on = [ null_resource.make_inventory ]
-}
+#   depends_on = [ null_resource.make_inventory ]
+# }
 

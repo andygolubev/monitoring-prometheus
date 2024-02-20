@@ -12,6 +12,9 @@ resource "digitalocean_droplet" "monitoring" {
   size   = "s-1vcpu-1gb-35gb-intel"
   ssh_keys = [digitalocean_ssh_key.vagrantvm.fingerprint]
 
+  provisioner "local-exec" {
+    command = "echo ${digitalocean_droplet.monitoring.ipv4_address} > ./inventory.ini"
+  }
 
 }
 
