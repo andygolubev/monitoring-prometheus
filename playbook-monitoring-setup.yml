@@ -4,6 +4,9 @@
   remote_user: root
 
   tasks:
+    - name: Wait for initialization has done
+      command: cloud-init status --wait
+
     - name: Add Docker's official GPG key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
