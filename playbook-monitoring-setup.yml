@@ -146,3 +146,12 @@
         # owner: root
         # group: root
         # mode: "0777"
+
+
+- name: Run Prometheus, Grafana, Alarm Manager
+  hosts: all
+  gather_facts: no
+  remote_user: monitoring
+  tasks:  
+    - name: Run docker-compose
+      command: docker-compose -f /home/monitoring/config/docker/docker-compose.yml up -d
