@@ -1,12 +1,55 @@
-- name: Install Docker on Ubuntu
+- name: Wait for initialization end
   hosts: all
-  gather_facts: yes
+  gather_facts: no
   remote_user: root
 
   tasks:
     - name: Wait for initialization has done
       command: cloud-init status --wait
 
+
+- name: Install Cert bot for SSL
+  hosts: all
+  gather_facts: yes
+  remote_user: root
+  vars_files:
+    - playbook-monitoring-setup-vars.yml
+
+  tasks:
+    - name: install PIP
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - python3
+        - python3-venv
+        - libaugeas0
+
+    - name: Set up a virtual environment
+      command: "python3 -m venv /opt/certbot/"
+
+    - name: Set up a virtual environment
+      command: "/opt/certbot/bin/pip install --upgrade pip"
+
+    - name: Install Certbot on NGINX
+      command: "/opt/certbot/bin/pip install certbot certbot-nginx"
+
+    - name: Create a symlink to ensure Certbot runs
+      file:
+        src: /opt/certbot/bin/certbot
+        dest: /usr/bin/certbot
+        state: link
+
+    - name: Create SSL certs for a specified domain
+      command: certbot --nginx -d {{ domain_name }} --non-interactive --agree-tos -m {{ admin_email }}
+
+
+- name: Install Docker on Ubuntu
+  hosts: all
+  gather_facts: yes
+  remote_user: root
+
+  tasks:
     - name: Add Docker's official GPG key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
@@ -41,6 +84,7 @@
       apt_repository:
         repo: "deb [signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
         state: present
+
     - name: Update APT cache
       apt:
         update_cache: yes
@@ -52,6 +96,7 @@
       loop:
         - docker-ce
         - docker-compose
+
     - name: Ensure Docker service is started and enabled
       service:
         name: docker
@@ -68,6 +113,7 @@
       ansible.builtin.group:
         name: monitoring
         state: present
+
     - name: Add the user 'Monitoring'
       ansible.builtin.user:
         name: monitoring
@@ -82,6 +128,7 @@
         mode: '0700'
         owner: monitoring
         group: monitoring
+
     - name: Copy the authorized_keys
       command: "install -o monitoring -g monitoring -m 0700  /root/.ssh/authorized_keys /home/monitoring/.ssh/authorized_keys"
 

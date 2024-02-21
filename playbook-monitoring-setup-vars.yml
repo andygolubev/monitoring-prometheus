@@ -1,0 +1,5 @@
+# Domain name for a monitoring server
+domain_name: test.exmaple.com
+
+# An email address for renewal and security notices
+dmin_email: admin@exmaple.com
