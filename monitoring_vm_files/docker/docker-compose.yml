@@ -10,6 +10,7 @@ services:
       - /home/monitoring/config/prometheus:/etc/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--enable-feature=native-histograms'
     networks:
       - monitoring
 
