@@ -10,7 +10,7 @@ resource "digitalocean_droplet" "monitoring" {
   name   = "monitoring"
   region = "fra1"
   #size   = "s-1vcpu-1gb-35gb-intel"
-  size   = "ubuntu-s-2vcpu-2gb-sfo3-01"
+  size   = "s-2vcpu-2gb"
   ssh_keys = [digitalocean_ssh_key.vagrantvm.fingerprint]
 
   provisioner "local-exec" {
