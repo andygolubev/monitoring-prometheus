@@ -49,6 +49,4 @@ scrape_configs:
 
     static_configs:
       - targets:
-        - 'kube-prom-test.interactiver.online:9090'
-        - 'source-prometheus-2:9090'
-        - 'source-prometheus-3:9090'
+        - 'kube-prom-test.interactiver.online:80'
