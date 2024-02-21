@@ -44,8 +44,7 @@ scrape_configs:
 
     params:
       'match[]':
-        - '{job="prometheus"}'
-        - '{__name__=~"job:.*"}'
+        - '{job!=""}'
 
     static_configs:
       - targets:
