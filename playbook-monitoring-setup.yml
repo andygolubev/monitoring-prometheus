@@ -155,3 +155,41 @@
   tasks:  
     - name: Run docker-compose
       command: docker-compose -f /home/monitoring/config/docker/docker-compose.yml up -d
+
+
+    # location ~ ^/prometheus/(.*) {
+    #     proxy_pass http://0.0.0.0:9090/$1$is_args$args;
+    #     proxy_set_header Host $host;
+    #     proxy_set_header X-Real-IP $remote_addr;
+    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #     proxy_set_header X-Forwarded-Proto $scheme;
+    # }
+    # location ~ ^/grafana/(.*) {
+    #     proxy_pass http://0.0.0.0:3000/$1$is_args$args;
+    #     proxy_set_header Host $host;
+    #     proxy_set_header X-Real-IP $remote_addr;
+    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #     proxy_set_header X-Forwarded-Proto $scheme;
+    # }
+
+
+
+   # location / {
+    #     proxy_pass http://0.0.0.0:3000/;
+    #     proxy_set_header Host $host;
+    #     proxy_set_header X-Real-IP $remote_addr;
+    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #     proxy_set_header X-Forwarded-Proto $scheme;
+    #     proxy_set_header Upgrade $http_upgrade;
+    #     proxy_set_header Connection "Upgrade";
+    # }
+
+    #     location /prometheus/ {
+    #     proxy_pass http://0.0.0.0:9090/;
+    #     proxy_set_header Host $host;
+    #     proxy_set_header X-Real-IP $remote_addr;
+    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #     proxy_set_header X-Forwarded-Proto $scheme;
+    # }
+
+ 
