@@ -48,4 +48,8 @@ scrape_configs:
 
     static_configs:
       - targets:
-        - 'kube-prom-test.interactiver.online:80'
+        - 'kube-prom-test2.interactiver.online:80'
+    basic_auth:
+      username: user
+      password: # declare with an ansible role
+     
