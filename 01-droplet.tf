@@ -14,7 +14,7 @@ resource "digitalocean_droplet" "monitoring" {
   ssh_keys = [digitalocean_ssh_key.devopsvm.fingerprint]
 
   provisioner "local-exec" {
-    command = "echo ${digitalocean_droplet.monitoring.ipv4_address} > ./inventory.ini"
+    command = "echo ${digitalocean_droplet.monitoring.ipv4_address} > ./playbook_inventory"
   }
 
 }

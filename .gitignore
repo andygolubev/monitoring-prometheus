@@ -33,5 +33,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 .terraform.lock.hcl
-inventory.ini
+playbook_inventory
 .DS_Store
