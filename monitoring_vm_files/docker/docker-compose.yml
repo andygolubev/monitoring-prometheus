@@ -31,6 +31,8 @@ services:
       - "3000:3000"
     volumes:
       - grafana_storage:/var/lib/grafana
+      - monitoring_vm_files/grafana/datasources:/etc/grafana/provisioning/datasources
+      - monitoring_vm_files/grafana/dashboards:/etc/grafana/provisioning/dashboards
     networks:
       - monitoring
 volumes:
