@@ -16,7 +16,9 @@ providers:
     type: file
     options:
       path: /var/lib/grafana/dashboards/kubernetes
+  - name: 'Pods'
+    orgId: 1
+    folder: 'Kubernetes'
+    type: file
     options:
-      gnetId: 5219
-      revision: 1
-      datasource: Prometheus
+      path: /var/lib/grafana/dashboards/pods
