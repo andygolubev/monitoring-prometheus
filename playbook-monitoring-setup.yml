@@ -146,6 +146,8 @@
         # owner: root
         # group: root
         # mode: "0777"
+      tags:
+        - movefiles 
 
 
 - name: Run Prometheus, Grafana, Alarm Manager

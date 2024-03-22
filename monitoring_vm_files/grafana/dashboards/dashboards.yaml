@@ -8,17 +8,17 @@ providers:
     disableDeletion: false
     editable: true
     options:
-      path: /var/lib/grafana/dashboards
+      path: /etc/grafana/provisioning/dashboards
       foldersFromFilesStructure: true
   - name: 'Kubernetes'
     orgId: 1
     folder: 'Kubernetes'
     type: file
     options:
-      path: /var/lib/grafana/dashboards/kubernetes
+      path: /etc/grafana/provisioning/dashboards/kubernetes
   - name: 'Pods'
     orgId: 1
     folder: 'Kubernetes'
     type: file
     options:
-      path: /var/lib/grafana/dashboards/pods
+      path: /etc/grafana/provisioning/dashboards/pods
