@@ -1,0 +1,4 @@
+- name: Copy the folder
+  copy:
+    src: ./monitoring_vm_files/
+    dest: /home/monitoring/config/

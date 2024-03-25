@@ -1,0 +1,7 @@
+---
+# defaults file for monitoring_role
+# Domain name for a monitoring server
+domain_name: subdomain.example.com
+
+# An email address for renewal and security notices
+admin_email: admin@gmail.com

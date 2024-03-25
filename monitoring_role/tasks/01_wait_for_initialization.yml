@@ -1,0 +1,3 @@
+- name: Wait for initialization has done
+  command: cloud-init status --wait
+

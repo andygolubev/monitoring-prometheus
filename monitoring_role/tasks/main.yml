@@ -1,0 +1,33 @@
+---
+# tasks file for monitoring_role
+- name: Wait for initialization end
+  import_tasks: 01_wait_for_initialization.yml
+  become: yes
+  become_user: root
+
+- name: Install Certbot and configure Nginx
+  import_tasks: 02_install_certbot_and_configure_nginx.yml
+  become: yes
+  become_user: root
+
+- name: Install Docker on Ubuntu
+  import_tasks: 03_install_docker.yml
+  become: yes
+  become_user: root
+
+- name: Add Monitoring user
+  import_tasks: 04_add_monitoring_user.yml
+  become: yes
+  become_user: root
+
+- name: Copy the folder with configurations
+  import_tasks: 05_copy_configuration_files.yml
+  become: yes
+  become_user: monitoring
+
+- name: Run Prometheus, Grafana, Alarm Manager
+  import_tasks: 06_run_containers.yml
+  become: yes
+  become_user: monitoring
+
+

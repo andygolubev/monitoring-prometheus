@@ -1,0 +1,22 @@
+- name: Ensure group "monitoring" exists
+  ansible.builtin.group:
+    name: monitoring
+    state: present
+
+- name: Add the user 'Monitoring'
+  ansible.builtin.user:
+    name: monitoring
+    shell: /bin/bash
+    groups: monitoring,sudo,docker
+    append: yes
+
+- name: Create a .ssh directory if it does not exist
+  ansible.builtin.file:
+    path: /home/monitoring/.ssh/
+    state: directory
+    mode: '0700'
+    owner: monitoring
+    group: monitoring
+
+- name: Copy the authorized_keys
+  command: "install -o monitoring -g monitoring -m 0700  /root/.ssh/authorized_keys /home/monitoring/.ssh/authorized_keys"

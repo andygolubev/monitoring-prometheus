@@ -1,30 +1,28 @@
-version: '3.8'
-
 services:
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    restart: on-failure
-    ports:
-      - "9090:9090"
-    volumes:
-      - /home/monitoring/config/prometheus:/etc/prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--enable-feature=native-histograms'
-    networks:
-      - monitoring
+  # prometheus:
+  #   image: prom/prometheus
+  #   container_name: prometheus
+  #   restart: on-failure
+  #   ports:
+  #     - "9090:9090"
+  #   volumes:
+  #     - /home/monitoring/config/prometheus:/etc/prometheus
+  #   command:
+  #     - '--config.file=/etc/prometheus/prometheus.yml'
+  #     - '--enable-feature=native-histograms'
+  #   networks:
+  #     - monitoring
 
-  alertmanager:
-    image: prom/alertmanager
-    container_name: alertmanager
-    restart: on-failure
-    ports:
-      - "9093:9093"
-    volumes:
-      - /home/monitoring/config/alertmanager:/etc/alertmanager
-    networks:
-      - monitoring
+  # alertmanager:
+  #   image: prom/alertmanager
+  #   container_name: alertmanager
+  #   restart: on-failure
+  #   ports:
+  #     - "9093:9093"
+  #   volumes:
+  #     - /home/monitoring/config/alertmanager:/etc/alertmanager
+  #   networks:
+  #     - monitoring
 
   grafana:
     image: grafana/grafana
@@ -36,6 +34,8 @@ services:
       - grafana_storage:/var/lib/grafana
       - /home/monitoring/config/grafana/datasources:/etc/grafana/provisioning/datasources
       - /home/monitoring/config/grafana/dashboards:/etc/grafana/provisioning/dashboards
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-polystat-panel
     networks:
       - monitoring
 volumes:

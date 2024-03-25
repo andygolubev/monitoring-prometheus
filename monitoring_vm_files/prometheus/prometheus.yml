@@ -36,20 +36,46 @@ scrape_configs:
     static_configs:
     - targets: ['localhost:3000']
 
-  - job_name: 'federate'
-    scrape_interval: 15s
+  # - job_name: 'k8s-test'
+  #   scrape_interval: 15s
 
-    honor_labels: true
-    metrics_path: '/federate'
+  #   honor_labels: true
+  #   metrics_path: '/federate'
 
-    params:
-      'match[]':
-        - '{job!=""}'
+  #   params:
+  #     'match[]':
+  #       - '{job!=""}'
 
-    static_configs:
-      - targets:
-        - 'kube-prom-test2.interactiver.online:80'
-    basic_auth:
-      username: user
-      password: # declare with an ansible role
+  #   static_configs:
+  #     - targets:
+  #       - 'kube-prom-test.interactiver.online:80'
+
+  #   basic_auth:
+  #     username: user
+  #     password: password
+
+  #   relabel_configs:
+  #     - source_labels: [__address__]
+  #       target_label: environment
+  #       replacement: 'test'
      
+  # - job_name: 'k8s-prod'
+  #   scrape_interval: 15s
+
+  #   honor_labels: true
+  #   metrics_path: '/federate'
+
+  #   params:
+  #     'match[]':
+  #       - '{job!=""}'
+
+  #   static_configs:
+  #     - targets:
+  #       - 'kube-prom.interactiver.online:80'
+  #   basic_auth:
+  #     username: user
+  #     password: password
+  #   relabel_configs:
+  #     - source_labels: [__address__]
+  #       target_label: environment
+  #       replacement: 'production'
