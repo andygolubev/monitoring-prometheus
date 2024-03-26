@@ -46,7 +46,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "name": "k8s-test"
+        "name": "k8s-prod"
       },
       "gridPos": {
         "h": 6,
@@ -115,7 +115,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -134,7 +134,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "name": "k8s-test"
+        "name": "k8s-prod"
       },
       "description": "",
       "fieldConfig": {
@@ -201,7 +201,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "exemplar": true,
           "expr": "count(kube_node_info)",
@@ -214,7 +214,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": "",
           "hide": true,
@@ -228,7 +228,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "name": "k8s-test"
+        "name": "k8s-prod"
       },
       "description": "",
       "fieldConfig": {
@@ -295,7 +295,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": " count(kube_namespace_created)",
           "hide": false,
@@ -307,7 +307,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": "",
           "hide": true,
@@ -321,7 +321,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "name": "k8s-test"
+        "name": "k8s-prod"
       },
       "fieldConfig": {
         "defaults": {
@@ -387,7 +387,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": " count(count by (pod)(container_spec_memory_reservation_limit_bytes{pod!=\"\"}))",
           "hide": false,
@@ -398,7 +398,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": "",
           "hide": true,
@@ -412,7 +412,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "name": "k8s-test"
+        "name": "k8s-prod"
       },
       "fieldConfig": {
         "defaults": {
@@ -481,7 +481,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": "count(kube_pod_container_status_terminated_reason{reason!=\"Completed\"} !=0 ) or vector(0)",
           "hide": false,
@@ -492,7 +492,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": "",
           "hide": true,
@@ -506,7 +506,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "name": "k8s-test"
+        "name": "k8s-prod"
       },
       "fieldConfig": {
         "defaults": {
@@ -575,7 +575,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "editorMode": "code",
           "expr": "count(kube_pod_container_status_waiting !=0 ) or vector(0)",
@@ -588,7 +588,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": "",
           "hide": true,
@@ -602,7 +602,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "name": "k8s-test"
+        "name": "k8s-prod"
       },
       "fieldConfig": {
         "defaults": {
@@ -670,7 +670,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": "count(kube_persistentvolumeclaim_info) ",
           "hide": false,
@@ -681,7 +681,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": "",
           "hide": true,
@@ -695,7 +695,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "name": "k8s-test"
+        "name": "k8s-prod"
       },
       "fieldConfig": {
         "defaults": {
@@ -749,7 +749,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "expr": "sum(time() - kube_service_created{namespace=\"default\",service=\"kubernetes\"})",
           "hide": false,
@@ -780,7 +780,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "description": "",
           "fieldConfig": {
@@ -885,7 +885,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -904,7 +904,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "description": "",
           "fieldConfig": {
@@ -1009,7 +1009,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -1028,7 +1028,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -1108,7 +1108,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -1126,7 +1126,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -1206,7 +1206,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -1224,7 +1224,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "description": "This panel shows node memory usage:\n\nnode_memory_MemTotal - node_memory_MemAvailable",
           "fieldConfig": {
@@ -1364,7 +1364,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -1383,7 +1383,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "description": "This panel shows node memory usage:\n\nnode_memory_MemTotal - node_memory_MemAvailable",
           "fieldConfig": {
@@ -1469,7 +1469,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -1487,7 +1487,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "description": "This panel shows node memory usage:\n\ncontainer working set",
           "fieldConfig": {
@@ -1612,7 +1612,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -1656,7 +1656,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -1736,7 +1736,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -1754,7 +1754,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -1834,7 +1834,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -1847,7 +1847,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -1861,7 +1861,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -1880,7 +1880,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -1958,7 +1958,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_read_bytes_total{node=~\"^$node$\",device=\"vda\"}[$interval])",
@@ -1970,7 +1970,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_written_bytes_total{node=~\"^$node$\",device=\"vda\"}[$interval])",
@@ -1988,7 +1988,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -2065,7 +2065,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -2078,7 +2078,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -2097,7 +2097,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -2177,7 +2177,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2190,7 +2190,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2204,7 +2204,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2218,7 +2218,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "node_memory_MemAvailable_bytes{node=~\"^$node$\"}",
@@ -2236,7 +2236,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -2316,7 +2316,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2329,7 +2329,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "irate(node_network_transmit_bytes_total{node=~\"^$node$\",device=\"eth0\"}[$interval])*8",
@@ -2347,7 +2347,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -2427,7 +2427,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2440,7 +2440,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "irate(node_network_transmit_packets_total{node=~\"^$node$\",device=\"eth0\"}[$interval])",
@@ -2453,7 +2453,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "irate(node_network_receive_errs_total{node=~\"^$node$\",device=\"eth0\"}[$interval])",
@@ -2466,7 +2466,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "irate(node_network_transmit_errs_total{node=~\"^$node$\",device=\"eth0\"}[$interval])",
@@ -2484,7 +2484,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -2564,7 +2564,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2577,7 +2577,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "node_sockstat_TCP_alloc{node=~\"^$node$\"}",
@@ -2590,7 +2590,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "node_sockstat_TCP_tw{node=~\"^$node$\"}",
@@ -2603,7 +2603,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "node_netstat_Tcp_CurrEstab{node=~\"^$node$\"}",
@@ -2616,7 +2616,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "node_sockstat_sockets_used{node=~\"^$node$\"}",
@@ -2652,7 +2652,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -2720,7 +2720,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",kubernetes_io_hostname=~\"^$node$\"}[$interval])) / sum (kube_node_status_allocatable{resource=\"cpu\",node=~\"^$node$\"}) * 100",
@@ -2739,7 +2739,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -2806,7 +2806,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2826,7 +2826,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -2894,7 +2894,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2915,7 +2915,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "description": "",
           "fieldConfig": {
@@ -2980,7 +2980,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3000,7 +3000,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -3064,7 +3064,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "sum (kube_node_status_allocatable{resource=\"cpu\",node=~\"^$node$\"})",
@@ -3082,7 +3082,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -3146,7 +3146,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3166,7 +3166,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -3230,7 +3230,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3250,7 +3250,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -3314,7 +3314,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3334,7 +3334,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -3398,7 +3398,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3418,7 +3418,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -3521,7 +3521,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "exemplar": true,
               "expr": "kube_node_info",
@@ -3535,7 +3535,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3550,7 +3550,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3565,7 +3565,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3580,7 +3580,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3595,7 +3595,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3610,7 +3610,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3625,7 +3625,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3640,7 +3640,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -3844,7 +3844,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -3929,7 +3929,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "sum (rate (container_cpu_usage_seconds_total{image!=\"\",container!=\"\",namespace=~\"^$namespace$\",pod=~\"^$pod$\"}[$interval])) by (pod)",
@@ -3945,7 +3945,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -4030,7 +4030,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "sum (rate (container_cpu_usage_seconds_total{image!=\"\",container!=\"\",namespace=~\"^$namespace$\",pod=~\"^$pod$\"}[$interval])) by (pod, container)",
@@ -4060,7 +4060,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "description": "",
           "fieldConfig": {
@@ -4146,7 +4146,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "sum (container_memory_working_set_bytes{image!=\"\",container!=\"\",namespace=~\"^$namespace$\",pod=~\"^$pod$\"}) by (pod)",
@@ -4162,7 +4162,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -4247,7 +4247,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "sum (container_memory_working_set_bytes{image!=\"\",container!=\"\",namespace=~\"^$namespace$\",pod=~\"^$pod$\"}) by (pod, container)",
@@ -4277,7 +4277,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -4362,7 +4362,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "expr": "sum (rate (container_network_receive_bytes_total{image!=\"\",namespace=~\"^$namespace$\",pod=~\"^$pod$\"}[$interval])) by (pod)",
@@ -4392,7 +4392,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -4446,7 +4446,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -4506,7 +4506,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -4560,7 +4560,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -4606,7 +4606,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "description": "This panel shows container memory usage:\n\ncontainer_memory_working_set_bytes / kube_pod_container_resource_limits",
           "fieldConfig": {
@@ -4661,7 +4661,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -4707,7 +4707,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "name": "k8s-test"
+            "name": "k8s-prod"
           },
           "fieldConfig": {
             "defaults": {
@@ -4761,7 +4761,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "name": "k8s-test"
+                "name": "k8s-prod"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -4901,7 +4901,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "name": "k8s-test"
+          "name": "k8s-prod"
         },
         "definition": "label_values(kubernetes_io_hostname)",
         "hide": 0,
@@ -4928,7 +4928,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "name": "k8s-test"
+          "name": "k8s-prod"
         },
         "definition": "label_values(kube_namespace_labels,namespace)",
         "hide": 0,
@@ -4955,7 +4955,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "name": "k8s-test"
+          "name": "k8s-prod"
         },
         "definition": "label_values(kube_pod_container_info{namespace=~\"$namespace\"},pod)",
         "hide": 0,
@@ -4982,8 +4982,8 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "k8s cluster test",
-  "uid": "KJZHmFSSz",
+  "title": "Kubernetes PROD",
+  "uid": "KJZHmF1Sz",
   "version": 1,
   "weekStart": ""
 }

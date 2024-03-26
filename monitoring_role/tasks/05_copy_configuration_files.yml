@@ -1,9 +1,29 @@
-- name: Copy the folder
-  copy:
-    src: ./monitoring_vm_files/
-    dest: /home/monitoring/config/
+# - name: Copy the folder
+#   copy:
+#     src: ./monitoring_vm_files/
+#     dest: /home/monitoring/config/
 
 - name: Copy docker compose
   template:
     src: docker-compose.yml.j2
     dest: /home/monitoring/config/docker/docker-compose.yml
+
+- name: Copy grafana datasource
+  template:
+    src: datasources.yaml.j2
+    dest: /home/monitoring/config/grafana/datasources/datasources.yaml
+
+- name: Copy grafana dashboards
+  template:
+    src: dashboards.yaml.j2
+    dest: /home/monitoring/config/grafana/dashboards/dashboards.yaml
+
+- name: Copy grafana dashboards for kubernetes test
+  template:
+    src: grafana-k8s-test-cluster-dashboard.json.j2
+    dest: /home/monitoring/config/grafana/dashboards/grafana-k8s-test-cluster-dashboard.json
+
+- name: Copy grafana dashboards for kubernetes prod
+  template:
+    src: grafana-k8s-prod-cluster-dashboard.json.j2
+    dest: /home/monitoring/config/grafana/dashboards/grafana-k8s-prod-cluster-dashboard.json

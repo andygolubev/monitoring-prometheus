@@ -11,3 +11,11 @@ admin_email: admin@gmail.com
 # GRAFANA
 grafana_admin_user: "admin"
 grafana_admin_password: "admin"
+
+grafana_datasource_k8s_test_url: http://kube-prometheus-test.interactiver.online:80
+grafana_datasource_k8s_test_login: "user"
+grafana_datasource_k8s_test_password: "password"
+
+grafana_datasource_k8s_prod_url: http://kube-prometheus-prod.interactiver.online:80
+grafana_datasource_k8s_prod_login: "user"
+grafana_datasource_k8s_prod_password: "password"
