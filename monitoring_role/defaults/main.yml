@@ -1,7 +1,13 @@
 ---
-# defaults file for monitoring_role
-# Domain name for a monitoring server
-domain_name: subdomain.example.com
+# defaults file for monitoring_vault_role
+
+# Domain name for a monitoring and vault server
+domain_name_monitoring: subdomain.example.com
+domain_name_vault: subdomain2.example.com
 
 # An email address for renewal and security notices
 admin_email: admin@gmail.com
+
+# GRAFANA
+grafana_admin_user: "admin"
+grafana_admin_password: "admin"

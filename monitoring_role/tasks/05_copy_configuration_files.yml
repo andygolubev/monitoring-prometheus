@@ -2,3 +2,8 @@
   copy:
     src: ./monitoring_vm_files/
     dest: /home/monitoring/config/
+
+- name: Copy docker compose
+  template:
+    src: docker-compose.yml.j2
+    dest: /home/monitoring/config/docker/docker-compose.yml

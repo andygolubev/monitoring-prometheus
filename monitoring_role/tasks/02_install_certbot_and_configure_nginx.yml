@@ -31,4 +31,4 @@
     state: link
 
 - name: Create SSL certs for a specified domain
-  command: certbot --nginx -d {{ domain_name }} --non-interactive --agree-tos -m {{ admin_email }}
+  command: certbot --nginx -d {{ domain_name_monitoring }} -d {{ domain_name_vault }} --non-interactive --agree-tos -m {{ admin_email }}
