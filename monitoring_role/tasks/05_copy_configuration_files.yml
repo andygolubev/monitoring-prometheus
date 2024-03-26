@@ -3,6 +3,18 @@
 #     src: ./monitoring_vm_files/
 #     dest: /home/monitoring/config/
 
+- name: Create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+  loop:
+    - /home/monitoring/config
+    - /home/monitoring/config/docker
+    - /home/monitoring/config/grafana
+    - /home/monitoring/config/grafana/datasources
+    - /home/monitoring/config/grafana/dashboards
+
 - name: Copy docker compose
   template:
     src: docker-compose.yml.j2
@@ -19,11 +31,11 @@
     dest: /home/monitoring/config/grafana/dashboards/dashboards.yaml
 
 - name: Copy grafana dashboards for kubernetes test
-  template:
-    src: grafana-k8s-test-cluster-dashboard.json.j2
+  copy:
+    src: grafana-k8s-test-cluster-dashboard.json
     dest: /home/monitoring/config/grafana/dashboards/grafana-k8s-test-cluster-dashboard.json
 
 - name: Copy grafana dashboards for kubernetes prod
-  template:
-    src: grafana-k8s-prod-cluster-dashboard.json.j2
+  copy:
+    src: grafana-k8s-prod-cluster-dashboard.json
     dest: /home/monitoring/config/grafana/dashboards/grafana-k8s-prod-cluster-dashboard.json
