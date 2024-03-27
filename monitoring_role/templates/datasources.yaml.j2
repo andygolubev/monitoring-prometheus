@@ -19,7 +19,7 @@ datasources:
     type: prometheus
     access: proxy
     url: {{ grafana_datasource_k8s_prod_url }}
-    isDefault: true
+    isDefault: false
     basicAuth: true
     basicAuthUser: "{{ grafana_datasource_k8s_prod_login }}"
     secureJsonData:
