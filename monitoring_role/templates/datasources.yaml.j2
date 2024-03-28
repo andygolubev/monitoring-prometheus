@@ -29,3 +29,31 @@ datasources:
       oauthPassThru: false
       sigV4Auth: false
     editable: true
+  - name: logs-test
+    type: loki
+    access: proxy
+    url: {{ grafana_datasource_logs_test_url }}
+    isDefault: false
+    basicAuth: true
+    basicAuthUser: "{{ grafana_datasource_logs_test_login }}"
+    secureJsonData:
+      basicAuthPassword: "{{ grafana_datasource_logs_test_password }}"
+    jsonData:
+      httpMethod: "POST"
+      oauthPassThru: false
+      sigV4Auth: false
+    editable: true
+  - name: logs-prod
+    type: loki
+    access: proxy
+    url: {{ grafana_datasource_logs_prod_url }}
+    isDefault: false
+    basicAuth: true
+    basicAuthUser: "{{ grafana_datasource_logs_prod_login }}"
+    secureJsonData:
+      basicAuthPassword: "{{ grafana_datasource_logs_prod_password }}"
+    jsonData:
+      httpMethod: "POST"
+      oauthPassThru: false
+      sigV4Auth: false
+    editable: true

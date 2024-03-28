@@ -12,10 +12,19 @@ admin_email: admin@gmail.com
 grafana_admin_user: "admin"
 grafana_admin_password: "admin"
 
-grafana_datasource_k8s_test_url: http://kube-prometheus-test.interactiver.online:80
+grafana_datasource_k8s_test_url: "http://prometheus-test.example.com:80"
 grafana_datasource_k8s_test_login: "user"
 grafana_datasource_k8s_test_password: "password"
 
-grafana_datasource_k8s_prod_url: http://kube-prometheus-prod.interactiver.online:80
+grafana_datasource_k8s_prod_url: "http://prometheus-prod.example.com:80"
 grafana_datasource_k8s_prod_login: "user"
 grafana_datasource_k8s_prod_password: "password"
+
+
+grafana_datasource_logs_test_url: "http://loki-test.example.com:80"
+grafana_datasource_logs_test_login: "user"
+grafana_datasource_logs_test_password: "password"
+
+grafana_datasource_logs_prod_url: "http://loki-prod.example.com:80"
+grafana_datasource_logs_prod_login: "user"
+grafana_datasource_logs_prod_password: "password"
