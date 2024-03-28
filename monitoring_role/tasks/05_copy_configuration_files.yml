@@ -30,12 +30,8 @@
     src: dashboards.yaml.j2
     dest: /home/monitoring/config/grafana/dashboards/dashboards.yaml
 
-- name: Copy grafana dashboards for kubernetes test
+- name: Copy grafana dashboards for kubernetes
   copy:
-    src: grafana-k8s-test-cluster-dashboard.json
-    dest: /home/monitoring/config/grafana/dashboards/grafana-k8s-test-cluster-dashboard.json
+    src: grafana-k8s-cluster-dashboard.json
+    dest: /home/monitoring/config/grafana/dashboards/grafana-k8s-cluster-dashboard.json
 
-- name: Copy grafana dashboards for kubernetes prod
-  copy:
-    src: grafana-k8s-prod-cluster-dashboard.json
-    dest: /home/monitoring/config/grafana/dashboards/grafana-k8s-prod-cluster-dashboard.json
