@@ -31,6 +31,12 @@ loki:
         directory: /data/loki/chunks
     limits_config:
       retention_period: 720h # Set retention period (in hours), for example, 720h for 30 days retention
+      split_queries_by_interval: 24h
+      max_query_parallelism: 100
+    query_scheduler:
+      max_outstanding_requests_per_tenant: 4096
+    frontend:
+      max_outstanding_per_tenant: 4096
 
 promtail:
   enabled: true
