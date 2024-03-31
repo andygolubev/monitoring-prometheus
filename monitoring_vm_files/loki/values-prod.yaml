@@ -1,0 +1,52 @@
+
+loki:
+  enabled: true
+  persistence:
+    enabled: true
+    storageClassName: do-block-storage
+    accessModes: ["ReadWriteOnce"]
+    size: 8Gi
+  config:
+    compactor:
+      working_directory: /data/loki/compactor
+      shared_store: filesystem
+      retention_enabled: true
+      retention_delete_delay: 2h # Delay before deletion, useful for ensuring no premature deletions.
+      retention_delete_worker_count: 150 # Number of workers to use when deleting data.
+    schema_config:
+      configs:
+      - from: 2020-10-24
+        store: boltdb-shipper
+        object_store: filesystem
+        schema: v11
+        index:
+          prefix: index_
+          period: 24h
+    storage_config:
+      boltdb_shipper:
+        active_index_directory: /data/loki/index
+        cache_location: /data/loki/cache
+        cache_ttl: 24h # Time to keep index in cache
+      filesystem:
+        directory: /data/loki/chunks
+    limits_config:
+      retention_period: 720h # Set retention period (in hours), for example, 720h for 30 days retention
+      split_queries_by_interval: 24h
+      max_query_parallelism: 100
+    query_scheduler:
+      max_outstanding_requests_per_tenant: 4096
+    frontend:
+      max_outstanding_per_tenant: 4096
+
+promtail:
+  enabled: true
+
+fluent-bit:
+  enabled: false
+
+grafana:
+  enabled: false
+
+prometheus:
+  enabled: false
+
