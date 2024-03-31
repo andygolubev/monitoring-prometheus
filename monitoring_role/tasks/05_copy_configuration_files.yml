@@ -31,12 +31,20 @@
     src: dashboards.yaml.j2
     dest: /home/monitoring/config/grafana/dashboards/dashboards.yaml
 
-- name: Copy grafana dashboards for kubernetes
+- name: Copy grafana dashboards for kubernetes (cluster)
   copy:
     src: grafana-k8s-cluster-dashboard.json
     dest: /home/monitoring/config/grafana/dashboards/k8s/grafana-k8s-cluster-dashboard.json
 
-- name: Copy grafana dashboards for kubernetes
+- name: Copy grafana dashboards for kubernetes (logs)
   copy:
-    src: grafana-k8s-cluster-dashboard.json
+    src: grafana-k8s-logs-dashboard.json
     dest: /home/monitoring/config/grafana/dashboards/k8s/grafana-k8s-logs-dashboard.json
+
+- name: Copy grafana dashboards for kubernetes (volumes)
+  copy:
+    src: grafana-k8s-volumes-dashboard.json
+    dest: /home/monitoring/config/grafana/dashboards/k8s/grafana-k8s-volumes-dashboard.json
+
+
+    
