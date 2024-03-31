@@ -443,8 +443,8 @@
       {
         "current": {
           "selected": true,
-          "text": "logs-prod",
-          "value": "P123A5261ABBF1824"
+          "text": "logs-test",
+          "value": "P0C82920CC871104F"
         },
         "description": "Loki datasource",
         "hide": 0,
@@ -483,9 +483,9 @@
       },
       {
         "current": {
-          "selected": true,
-          "text": "ingress-nginx",
-          "value": "ingress-nginx"
+          "selected": false,
+          "text": "interactiver-ingress",
+          "value": "interactiver-ingress"
         },
         "datasource": {
           "type": "loki",
@@ -533,7 +533,7 @@
         "query": {
           "label": "app",
           "refId": "LokiVariableQueryEditor-VariableQuery",
-          "stream": "",
+          "stream": "{namespace=~\"$namespace\"}",
           "type": 1
         },
         "refresh": 1,
@@ -545,13 +545,9 @@
       {
         "allValue": ".+",
         "current": {
-          "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": {
           "type": "loki",
@@ -562,13 +558,13 @@
         "hide": 0,
         "includeAll": true,
         "label": "",
-        "multi": true,
+        "multi": false,
         "name": "container",
         "options": [],
         "query": {
           "label": "container",
           "refId": "LokiVariableQueryEditor-VariableQuery",
-          "stream": "",
+          "stream": "{app=~\"$app\", namespace=~\"$namespace\"}",
           "type": 1
         },
         "refresh": 1,
@@ -633,6 +629,6 @@
   "timezone": "",
   "title": "Loki Kubernetes Logs",
   "uid": "c5138eca-b5d8-4198-92ed-0a0fbd54fc97",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
