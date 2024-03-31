@@ -7,10 +7,10 @@ resource "digitalocean_ssh_key" "devopsvm" {
 # Create a new Droplet using the SSH key
 resource "digitalocean_droplet" "monitoring" {
   image  = "ubuntu-23-10-x64"
-  name   = "monitoring"
+  name   = "monitoring_vault"
   region = "fra1"
-  #size   = "s-1vcpu-1gb-35cd monitoringgb-intel"
-  size   = "s-1vcpu-2gb"
+  size   = "s-1vcpu-1gb"
+  #size   = "s-1vcpu-2gb"
   ssh_keys = [digitalocean_ssh_key.devopsvm.fingerprint]
 
   provisioner "local-exec" {
@@ -18,11 +18,3 @@ resource "digitalocean_droplet" "monitoring" {
   }
 
 }
-
-# resource "null_resource" "addkey" {
-#   provisioner "local-exec" {
-#     command = "echo $(ssh-keyscan -H ${digitalocean_droplet.monitoring.ipv4_address}) >> ~/.ssh/known_hosts"
-#   }
-
-#   depends_on = [ digitalocean_droplet.monitoring ]
-# }

@@ -30,4 +30,10 @@
   become: yes
   become_user: monitoring
 
+- name: Install and Enable Firewall
+  import_tasks: 07_enable_ufw.yml
+  become: yes
+  become_user: root
+
+
 
