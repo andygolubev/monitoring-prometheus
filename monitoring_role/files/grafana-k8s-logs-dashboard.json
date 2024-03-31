@@ -102,10 +102,6 @@
                 {
                   "color": "green",
                   "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
                 }
               ]
             },
@@ -114,7 +110,7 @@
           "overrides": []
         },
         "gridPos": {
-          "h": 8,
+          "h": 6,
           "w": 14,
           "x": 0,
           "y": 1
@@ -161,19 +157,19 @@
         "fieldConfig": {
           "defaults": {
             "color": {
-              "mode": "continuous-BlPu",
+              "mode": "palette-classic",
               "seriesBy": "last"
             },
             "custom": {
               "axisBorderShow": false,
               "axisCenteredZero": false,
-              "axisColorMode": "text",
+              "axisColorMode": "series",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
               "drawStyle": "bars",
               "fillOpacity": 100,
-              "gradientMode": "none",
+              "gradientMode": "hue",
               "hideFrom": {
                 "legend": false,
                 "tooltip": false,
@@ -197,7 +193,7 @@
               }
             },
             "decimals": 0,
-            "displayName": "By ${__field.labels.stream}",
+            "displayName": "${__field.labels.stream}",
             "mappings": [],
             "noValue": "0",
             "thresholds": {
@@ -215,10 +211,41 @@
             },
             "unit": "none"
           },
-          "overrides": []
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "stderr"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "red",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "stdout"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "green",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            }
+          ]
         },
         "gridPos": {
-          "h": 8,
+          "h": 6,
           "w": 5,
           "x": 14,
           "y": 1
@@ -260,7 +287,7 @@
           "type": "loki",
           "uid": "${ds}"
         },
-        "description": "根据app分组统计日志量大小",
+        "description": "",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -298,7 +325,7 @@
                 "mode": "off"
               }
             },
-            "displayName": "app ${__field.labels.__values}",
+            "displayName": "${__field.labels.__values}",
             "mappings": [],
             "noValue": "0",
             "thresholds": {
@@ -319,7 +346,7 @@
           "overrides": []
         },
         "gridPos": {
-          "h": 8,
+          "h": 6,
           "w": 5,
           "x": 19,
           "y": 1
@@ -361,7 +388,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 9
+          "y": 7
         },
         "id": 10,
         "panels": [],
@@ -378,7 +405,7 @@
           "h": 28,
           "w": 24,
           "x": 0,
-          "y": 10
+          "y": 8
         },
         "id": 2,
         "interval": "1m",
@@ -409,7 +436,7 @@
         "type": "logs"
       }
     ],
-    "refresh": "1h",
+    "refresh": "2h",
     "schemaVersion": 39,
     "tags": [],
     "templating": {
@@ -436,7 +463,7 @@
         },
         {
           "current": {
-            "selected": false,
+            "selected": true,
             "text": "",
             "value": ""
           },
@@ -458,7 +485,7 @@
         {
           "allValue": ".*",
           "current": {
-            "selected": true,
+            "selected": false,
             "text": "interactiver-ingress",
             "value": "interactiver-ingress"
           },
@@ -486,7 +513,7 @@
         },
         {
           "current": {
-            "selected": true,
+            "selected": false,
             "text": [
               "All"
             ],
@@ -520,12 +547,12 @@
         {
           "allValue": ".*",
           "current": {
-            "selected": true,
+            "selected": false,
             "text": [
-              "platform"
+              "All"
             ],
             "value": [
-              "platform"
+              "$__all"
             ]
           },
           "datasource": {
@@ -555,7 +582,7 @@
         {
           "allValue": ".*",
           "current": {
-            "selected": true,
+            "selected": false,
             "text": [
               "All"
             ],
@@ -582,13 +609,13 @@
           "refresh": 1,
           "regex": "",
           "skipUrlSync": false,
-          "sort": 0,
+          "sort": 2,
           "type": "query"
         }
       ]
     },
     "time": {
-      "from": "now-7d",
+      "from": "now-6h",
       "to": "now"
     },
     "timepicker": {
@@ -608,6 +635,6 @@
     "timezone": "",
     "title": "Loki Kubernetes Logs",
     "uid": "c5138eca-b5d8-4198-92ed-0a0fbd54fc97",
-    "version": 12,
+    "version": 13,
     "weekStart": ""
   }
