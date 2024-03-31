@@ -33,4 +33,3 @@
 - name: Enable UFW
   ufw:
     state: enabled
-    reload: yes
