@@ -1,4 +1,10 @@
-Commands
+# Monitoring multiple k8s clusters with Prometheus and Grafana deployed using Terraform and Ansible role
+This repository has the code for the article.
+
+Link to my article with details: https://dev.to/andygolubev/monitoring-multiple-k8s-clusters-with-prometheus-and-grafana-deployed-using-terraform-and-ansible-role-57o2
+
+
+Commands reference:
 
 ```bash
 
